@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="user-container"></div>
+      <div class="quote-container"></div>
+      <div class="content-container">
+        <div class="pokemon-container"></div>
+        <div class="meat-container"></div>
+      </div>
+      <div class="friends">
+        <h4>Friends</h4>
+        <div class="friends-container"></div>
+      </div>
+      <div class="buttons">
+        <button>Load User Data</button>
+        <button>Display User</button>
+        <button>Save User Page</button>
+        <button>Load User Page</button>
+      </div>
+    </div>
+
+    <script id="Quote-template" type="text/x-handlebars-template">
+      <p>Favorite quote:</p>
+      {{text}}
+    </script>
+
+    <script id="Pokemon-template" type="text/x-handlebars-template">
+      <img src={{imgUrl}} id='pokemon-image' alt='' />
+      <div id='pokemon-text'>Favorite Pokemon : {{name}}</div>
+    </script>
+
+    <script id="About-template" type="text/x-handlebars-template">
+      <p>About me :</p>
+      <div class='meat-text'>
+        {{text}}
+      </div>
+    </script>
+
+    <script id="Friends-template" type="text/x-handlebars-template">
+      <ul>
+        {{#each elements}}
+          <li>{{name.first}} {{name.last}}</li>
+        {{/each}}
+      </ul>
+    </script>
+
+    <script id="User-template" type="text/x-handlebars-template">
+      <img src='{{picture.large}}' alt='profile-pic' id='profile-pic' />
+      <div class='user-info'>
+        <p>{{name.first}} {{name.last}}</p>
+        <p>{{location.city}} {{location.state}}</p>
+      </div>
+    </script>
+
+    <script src="Templates.html"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="APIManager.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
